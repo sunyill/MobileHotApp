@@ -10,9 +10,9 @@ const Instance = axios.create({
   timeout: 5000,
   baseURL: 'http://ttapi.research.itcast.cn',
   /**
- * 在服务器返回数据时,进行大数字处理
- * transfromResponse 是在响应拦截之前执行
- */
+   * 在服务器返回数据时,进行大数字处理
+   * transfromResponse 是在响应拦截之前执行
+   */
   transformResponse: [function (data) {
     // 数据data可能不是标准的json格式,会报错,这时将data原样return
     try {
