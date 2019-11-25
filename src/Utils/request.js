@@ -36,7 +36,8 @@ Instance.interceptors.request.use(function (config) {
  * 相应
  */
 Instance.interceptors.response.use(function (response) {
-  return response
+  // 返回的数据时data{data.....}
+  return response.data.data || response.data
 }, function (err) {
   return Promise.reject(err)
 })

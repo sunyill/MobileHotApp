@@ -31,9 +31,12 @@ export default {
     },
     async handleLogin () {
       try {
-        let res = await Login(this.user)
-        console.log(res)
+        let data = await Login(this.user)
+        this.$toast('登录成功')
+        this.$router.push('/')
+        console.log(data)
       } catch (error) {
+        this.$toast('登录失败')
         console.log(error)
       }
     }
