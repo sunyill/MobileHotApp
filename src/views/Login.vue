@@ -32,6 +32,8 @@ export default {
     async handleLogin () {
       try {
         let data = await Login(this.user)
+        // 将登录的状态, token , reflesh-token 保存在vuex
+        this.$store.commit('setUser', data)
         this.$toast('登录成功')
         this.$router.push('/')
         console.log(data)
