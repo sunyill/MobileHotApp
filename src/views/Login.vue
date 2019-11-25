@@ -16,6 +16,7 @@
 
 <script>
 import { Login } from '@/Api/login.js'
+import { mapMutations } from '@/store/index.js'
 export default {
   data () {
     return {
@@ -26,6 +27,7 @@ export default {
     }
   },
   methods: {
+    ...mapMutations(['setUser']),
     onClickLeft () {
       console.log('返回')
     },
@@ -33,7 +35,10 @@ export default {
       try {
         let data = await Login(this.user)
         // 将登录的状态, token , reflesh-token 保存在vuex
-        this.$store.commit('setUser', data)
+        // 将token保存在本地
+        // this.$store.commit('setUser', data)
+        // 将状态保存本地和vuex
+        this.setUser(data)
         this.$toast('登录成功')
         this.$router.push('/')
         console.log(data)
