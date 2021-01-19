@@ -3,13 +3,22 @@
     <van-nav-bar title="登录" @click-left="onClickLeft" left-arrow></van-nav-bar>
 
     <van-cell-group>
+<<<<<<< HEAD
       <van-field v-model="user.mobile" left-icon="phone-o" clearable placeholder="请输入手机号码"></van-field>
       <van-field v-model="user.code" left-icon="idcard" clearable placeholder="请输入验证码">
+=======
+      <van-field v-model="value" left-icon="phone-o" clearable placeholder="请输入手机号码"></van-field>
+      <van-field v-model="value" left-icon="idcard" clearable placeholder="请输入验证码">
+>>>>>>> 9b15ce6... 6.登录|登录页界面
         <van-button slot="button" type="primary" size="small">发送验证码</van-button>
       </van-field>
     </van-cell-group>
     <div class="btn_login">
+<<<<<<< HEAD
       <van-button click="btn" size="large" type="primary" @click="handleLogin">登录</van-button>
+=======
+      <van-button click="btn" size="large" type="primary">登录</van-button>
+>>>>>>> 9b15ce6... 6.登录|登录页界面
     </div>
   </div>
 </template>
@@ -18,6 +27,7 @@
 import { Login } from '@/Api/login.js'
 import { mapMutations } from '@/store/index.js'
 export default {
+<<<<<<< HEAD
   data () {
     return {
       user: {
@@ -46,6 +56,16 @@ export default {
         this.$toast('登录失败')
         console.log(error)
       }
+=======
+  methods: {
+    data () {
+      return {
+        value: ''
+      }
+    },
+    onClickLeft () {
+      console.log('返回')
+>>>>>>> 9b15ce6... 6.登录|登录页界面
     }
   }
 }
